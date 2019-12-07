@@ -1,11 +1,15 @@
 import React from 'react';
+import InputCheckbox from './InputCheckbox';
 
-function gridItem() {
+function GridItem(props) {
   return (
     <div className="grid-item">
-      Test2
+      <InputCheckbox
+        name={props.item.name}
+        slug={props.item.slug}
+        checked={props.item.checked} />
     </div>
   );
 }
 
-export default gridItem;
+export default GridItem;
