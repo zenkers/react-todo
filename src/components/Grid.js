@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GridItem from './GridItem';
 
 const data = [{
@@ -16,14 +16,22 @@ const data = [{
 }];
 
 function Grid() {
-  const items = data.map(item => <GridItem key={item.slug} item={item} />);
+  const [items, setItems] = useState(data);
+  const updateItem = (item) => {
+    const index = items.findIndex(obj => obj.slug === item.slug);
+    const updatedItemsArr = [...items];
+    updatedItemsArr[index] = item;
+    setItems(updatedItemsArr);
+  };
+
+  const itemsRendered = items.map((item) => <GridItem key={item.slug} item={item} update={updateItem} />);
 
   return (
     <div className="grid">
       <h1 className="grid-title">
         Todo:
       </h1>
-      {items}
+      {itemsRendered}
     </div>
   );
 }

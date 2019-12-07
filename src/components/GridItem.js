@@ -5,9 +5,8 @@ function GridItem(props) {
   return (
     <div className="grid-item">
       <InputCheckbox
-        name={props.item.name}
-        slug={props.item.slug}
-        checked={props.item.checked} />
+        item={props.item}
+        update={props.update} />
     </div>
   );
 }
