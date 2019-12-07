@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from './components/Grid';
 import logo from './assets/img/logo.svg';
-import './styles/App.css';
+import './styles/App.scss';
 
 function App() {
   return (
